@@ -1,25 +1,25 @@
-# qtumjs-lib
+# btcbamjs-lib
 This is an extend lib for bitcoinjs-lib.
 It extends the network type of bitcoinjs-lib.
 It also provides an useful lib to help you building QTUM transactions.
 
 ## Installation
 ``` bash
-npm install qtumjs-lib
+npm install btcbamjs-lib
 ```
 
 ## Setup
 ### Node.js
 ``` javascript
-var qtumjs = require('qtumjs-lib')
+var btcbamjs = require('btcbamjs-lib')
 ```
 
 ## New features
 ### Network
 ```
 {
-    qtum: {
-        messagePrefix: '\x18Qtum Signed Message:\n',
+    btcbam: {
+        messagePrefix: '\x18Btcbam Signed Message:\n',
         bech32: 'qc',
         bip32: {
             public: 0x0488b21e,
@@ -29,8 +29,8 @@ var qtumjs = require('qtumjs-lib')
         scriptHash: 0x32,
         wif: 0x80
     },
-    qtum_testnet: {
-        messagePrefix: '\x18Qtum Signed Message:\n',
+    btcbam_testnet: {
+        messagePrefix: '\x18Btcbam Signed Message:\n',
         bech32: 'tq',
         bip32: {
             public: 0x043587cf,
