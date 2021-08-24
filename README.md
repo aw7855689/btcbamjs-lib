@@ -1,7 +1,7 @@
 # btcbamjs-lib
 This is an extend lib for bitcoinjs-lib.
 It extends the network type of bitcoinjs-lib.
-It also provides an useful lib to help you building QTUM transactions.
+It also provides an useful lib to help you building BTCBAM transactions.
 
 ## Installation
 ``` bash
@@ -20,7 +20,7 @@ var btcbamjs = require('btcbamjs-lib')
 {
     btcbam: {
         messagePrefix: '\x18Btcbam Signed Message:\n',
-        bech32: 'qc',
+        bech32: 'btcbam',
         bip32: {
             public: 0x0488b21e,
             private: 0x0488ade4
@@ -31,7 +31,7 @@ var btcbamjs = require('btcbamjs-lib')
     },
     btcbam_testnet: {
         messagePrefix: '\x18Btcbam Signed Message:\n',
-        bech32: 'tq',
+        bech32: 'tbtcbam',
         bip32: {
             public: 0x043587cf,
             private: 0x04358394
@@ -48,12 +48,12 @@ var btcbamjs = require('btcbamjs-lib')
 #### Utils.selectTxs
 ```javascript
 /**
- * This is a function for selecting QTUM utxos to build transactions
- * the transaction object takes at least 3 fields, value(unit is 1e-8 QTUM) , confirmations and isStake
+ * This is a function for selecting BTCBAM utxos to build transactions
+ * the transaction object takes at least 3 fields, value(unit is 1e-8 BTCBAM) , confirmations and isStake
  *
  * @param [transaction] unspentTransactions
- * @param Number amount(unit: QTUM)
- * @param Number fee(unit: QTUM)
+ * @param Number amount(unit: BTCBAM)
+ * @param Number fee(unit: BTCBAM)
  * @returns [transaction]
  */
 function selectTxs(unspentTransactions, amount, fee)
@@ -62,12 +62,12 @@ function selectTxs(unspentTransactions, amount, fee)
 ```javascript
 /**
  * This is a helper function to build a pubkeyhash transaction
- * the transaction object takes at least 5 fields, value(unit is 1e-8 QTUM), confirmations, isStake, hash and pos
+ * the transaction object takes at least 5 fields, value(unit is 1e-8 BTCBAM), confirmations, isStake, hash and pos
  *
  * @param bitcoinjs-lib.KeyPair keyPair
  * @param String to
- * @param Number amount(unit: QTUM)
- * @param Number fee(unit: QTUM)
+ * @param Number amount(unit: BTCBAM)
+ * @param Number fee(unit: BTCBAM)
  * @param [transaction] utxoList
  * @returns String the built tx
  */
@@ -77,13 +77,13 @@ function buildPubKeyHashTransaction(keyPair, to, amount, fee, utxoList)
 ```javascript
 /**
  * This is a helper function to build a create-contract transaction
- * the transaction object takes at least 5 fields, value(unit is 1e-8 QTUM), confirmations, isStake, hash and pos
+ * the transaction object takes at least 5 fields, value(unit is 1e-8 BTCBAM), confirmations, isStake, hash and pos
  *
  * @param bitcoinjs-lib.KeyPair keyPair
  * @param String code The contract byte code
  * @param Number gasLimit
- * @param Number gasPrice(unit: 1e-8 QTUM/gas)
- * @param Number fee(unit: QTUM)
+ * @param Number gasPrice(unit: 1e-8 BTCBAM/gas)
+ * @param Number fee(unit: BTCBAM)
  * @param [transaction] utxoList
  * @returns String the built tx
  */
@@ -93,14 +93,14 @@ function buildCreateContractTransaction(keyPair, code, gasLimit, gasPrice, fee, 
 ```javascript
 /**
  * This is a helper function to build a send-to-contract transaction
- * the transaction object takes at least 5 fields, value(unit is 1e-8 QTUM), confirmations, isStake, hash and pos
+ * the transaction object takes at least 5 fields, value(unit is 1e-8 BTCBAM), confirmations, isStake, hash and pos
  *
  * @param bitcoinjs-lib.KeyPair keyPair
  * @param String contractAddress The contract address
  * @param String encodedData The encoded abi data
  * @param Number gasLimit
- * @param Number gasPrice(unit: 1e-8 QTUM/gas)
- * @param Number fee(unit: QTUM)
+ * @param Number gasPrice(unit: 1e-8 BTCBAM/gas)
+ * @param Number fee(unit: BTCBAM)
  * @param [transaction] utxoList
  * @returns String the built tx
  */
