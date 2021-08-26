@@ -1,7 +1,7 @@
 module.exports = {
     btcbam: {
         messagePrefix: '\x15Btcbam Signed Message:\n',
-        bech32: 'qc',
+        bech32: 'btcbam',
         bip32: {
             public: 0x0488b21e,
             private: 0x0488ade4
@@ -12,7 +12,7 @@ module.exports = {
     },
     btcbam_testnet: {
         messagePrefix: '\x15Btcbam Signed Message:\n',
-        bech32: 'tq',
+        bech32: 'tbtcbam',
         bip32: {
             public: 0x043587cf,
             private: 0x04358394
